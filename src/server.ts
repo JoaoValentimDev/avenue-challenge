@@ -1,8 +1,7 @@
-import express from 'express' 
+import  { customExpress } from './config/customExpress';
+import  { showFullDateNow } from './utils/date/date';
+ 
+const port = 3001 || process.env.PORT;
 
-const app = express()
-
-
-app.listen("9090", ()=> {
-    console.log("listening on port 9090")
-})
+const app = customExpress();
+app.listen(port , () => console.log(`Backend is running on port ${port} - in ${showFullDateNow()}`));
