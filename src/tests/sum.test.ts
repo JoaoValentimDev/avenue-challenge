@@ -1,10 +1,13 @@
 
+const MyMock = jest.fn();
 
-describe("should make a sum", () => {
-    test("should make some sum", () => {
-        expect(2).toBe(2)
+MyMock.mockReturnValueOnce(2).mockReturnValueOnce(2)
+
+describe("should be equal", () => {
+    test("should make x some sum", () => {
+        expect( MyMock(2)).toBe(2)
     })
         test("should make some sum", () => {
-        expect(2).toBe(2)
+        expect( MyMock(4)).toBe(2)
     })
 })
